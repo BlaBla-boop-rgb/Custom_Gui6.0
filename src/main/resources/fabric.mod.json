@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "customgui",
+  "version": "${version}",
+  "name": "Custom GUI",
+  "description": "Menü im Cytooxien-Stil mit Taste (Standard H), Shop-Link, Inselliste, PvP-Einstellungen (RGB-Hitboxen) und Einstellungs-Overlay.",
+  "authors": ["Luis"],
+  "environment": "client",
+  "entrypoints": {
+    "client": ["dev.customgui.CustomGuiMod"]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.0",
+    "minecraft": "~26.1",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}
