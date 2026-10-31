@@ -1,5 +1,7 @@
-name: build
-on: [push, workflow_dispatch]
+name: Build
+on:
+  push:
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -8,13 +10,12 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 17
+          java-version: 25
       - uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: 8.8
-          cache-read-only: false
-      - run: gradle build --refresh-dependencies
+          gradle-version: current
+      - run: gradle build
       - uses: actions/upload-artifact@v4
         with:
-          name: customgui-jar
+          name: customgui
           path: build/libs/*.jar
